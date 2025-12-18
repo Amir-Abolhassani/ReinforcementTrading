@@ -20,7 +20,7 @@ def load_and_preprocess_data(csv_path: str) -> pd.DataFrame:
     df['atr'] = ta.atr(df['High'], df['Low'], df['Close'], length=14)
     
     # You could add more features: slopes, candlestick patterns, etc.
-    # For example: slope of ma_20
+    # For example: slope of ma_20 --AA: It's not actually the slope, it's the difference between two consequtive rows
     df['ma_20_slope'] = df['ma_20'].diff()
     
     # Drop any rows with NaN
