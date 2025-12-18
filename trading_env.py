@@ -20,7 +20,7 @@ class ForexTradingEnv(gym.Env):
         # Observation parameters
         self.window_size = window_size
         
-        # Discretize SL and TP distances in pips or in price terms
+        # Discretize SL and TP distances in pips or in price terms - AA: SL: stop loss, TP: take profit, and Pip: Percentage in Point
         # e.g. [10, 20, 30] pips from entry
         self.sl_options = sl_options if sl_options else [60, 90, 120]
         self.tp_options = tp_options if tp_options else [60, 90, 120]
@@ -78,7 +78,7 @@ class ForexTradingEnv(gym.Env):
     def _calculate_reward(self, direction, sl, tp):
         """
         A very simplified approach:
-        - Immediately calculate PnL based on next bar's movement (or multiple bars) until SL/TP is hit.
+        - Immediately calculate PnL based on next bar's movement (or multiple bars) until SL/TP is hit.   -AA: PnL: profit and loss
         - In a real scenario, you'd keep the position open for multiple steps.
         """
         entry_price = self.df.loc[self.current_step, "Close"]
