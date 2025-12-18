@@ -1,6 +1,8 @@
 import pandas as pd
 import pandas_ta as ta
 
+# AA: I can add few different indicators other than current MA
+
 def load_and_preprocess_data(csv_path: str) -> pd.DataFrame:
     """
     Loads EURUSD data from CSV and preprocesses it by adding technical indicators.
