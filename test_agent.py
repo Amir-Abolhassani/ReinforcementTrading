@@ -73,7 +73,7 @@ def main():
     trades_df.to_csv(output_file, index=False)
     print(f"Trade history saved to {output_file}")
 
-    # 7. Plot equity curve
+    # 7. Plot equity curve   -- AA: plot the equity curve on the test data
     plt.figure(figsize=(10, 6))
     plt.plot(equity_curve, label='Equity (Test Data)')
     plt.title("Equity Curve - Single-Bar RL Environment Test")
